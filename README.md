@@ -7,6 +7,7 @@
 * Compass
 * Livereload
 * Grunt
+* Image Min
 
 #### Utiliser Grunt
 	cd [mondossier]
@@ -16,4 +17,4 @@
 	grunt watch
 	
 #### Ce qu'il reste à mettre dedans
-* imagemin
+* ...
