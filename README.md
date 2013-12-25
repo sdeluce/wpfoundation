@@ -1,4 +1,12 @@
-Theme Wordpress Foundation 5
+![WP Foundation Icon](https://raw.github.com/boluge/wpfoundation/master/img/wpfoundation.jpg) 
 ============
 
-Wp theme Foundation 5
+
+##Blank Wordpress Theme
+#width Foundation 5
+
+### Et dedans il y a quoi ?
+
+* Foundation 5
+* Grunt
+* Compass
