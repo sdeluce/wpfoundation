@@ -1,0 +1,85 @@
+/*****************************************************\
+
+       .="=.
+     _/.-.-.\_
+    ( ( 0 0 ) )     _
+     |/  "  \|     //
+      \'---'/     //
+      /'………'\\   ((
+     / /_,_\ \\   \\
+     \_\\_ __/ \   ))  ____        __
+     /'  /'~\  |  //  / __ )____  / /_  ______  ___
+    /   /    \   //  / __  / __ \/ / / / / __ `/ _ \
+ --' ,--'\/\     /  / /_/ / /_/ / / /_/ / /_/ /  __/
+'.__ "___'  '___'  /_____/\____/_/\__,_/\__, /\___/
+                                       /____/
+\****************************************************/
+
+@import "compass";
+@import "compass/reset";
+
+/***************************/
+
+$FontSize: 16; // en px
+$lineHeight:1.5; // en em
+
+$titleColor:#222; // Couleur des titres
+$textColor:#666; // Couleur du texte
+$blockquoteColor:#999; // Couleur des citations
+$borderBqColor:#bada55; // Couleur de la bordure du Blockquote
+
+$hrColor:#ddd;
+
+// @import url(http://fonts.googleapis.com/css?family=PT+Sans|Kreon);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans|Architects+Daughter);
+$titleFont:'Architects Daughter', cursive;
+$textFont:'PT Sans', sans-serif;
+
+/***************************/
+
+$TypoBase:$FontSize * 1px;
+$Hligne:$lineHeight * 1em;
+$margeBottom:$FontSize * $lineHeight * 1px;
+
+body {
+	font-size: $TypoBase;
+	line-height: $Hligne;
+	letter-spacing: 1px;
+	font-family: $textFont;
+	// color:$textColor;
+
+	p,h1,h2,h3,h4,h5,h6,ul,ol,blockquote,hr {
+		margin-bottom: $margeBottom;
+	}
+	hr {
+		margin: $margeBottom 0;
+		height: 1px;
+  		padding: 0;
+  		// color: $hrColor;
+  		// background-color: $hrColor;
+  		border: 0;
+	}
+	@for $i from 1 through 6 {
+		h#{$i}{
+			font-size: (1+(($lineHeight - 1)/6) * (6- $i))*1em;
+			font-family: $titleFont;
+			// color: $titleColor;
+		}
+	}
+	blockquote{
+		padding-left: 10px;
+		margin-left: 20px;
+		// border-left: 3px solid $borderBqColor;
+		// color: $blockquoteColor;
+		font-style: italic;
+	}
+	ul,ol {
+		list-style-type: square;
+		padding-left: 30px;
+		list-style-position: outside;
+		// color:darken($textColor,20);
+	}
+	ol {
+		list-style-type: upper-roman;
+	}
+}

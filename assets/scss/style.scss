@@ -1,0 +1,19 @@
+@import
+  "compass",
+  "compass/reset",
+  "lib/foundation";
+
+// $primary-color: #B163A3;
+
+*:focus {outline: none;}
+
+body {
+	header {
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+	.contain-to-grid.fixed {
+		// border-bottom: 2px solid darken($primary-color,10);
+	}
+}
