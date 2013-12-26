@@ -15,6 +15,3 @@
 
 #### Lancer Grunt
 	grunt watch
-	
-#### Ce qu'il reste à mettre dedans
-* ...

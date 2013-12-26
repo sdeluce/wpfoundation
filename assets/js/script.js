@@ -21,15 +21,14 @@ jQuery(document).ready(function($) {
 		var height = tmp_img.height;
 		var width = tmp_img.width;
 
-
 		var ratio = Math.round( width/height ).toFixed(2);
 
 		var screenWidth = jQuery(window).outerWidth();
 		var heightbd = screenWidth / ratio;
 
-		console.log(height);
-		console.log(width);
-		console.log(ratio);
+		// console.log(height);
+		// console.log(width);
+		// console.log(ratio);
 
 		jQuery('header#bdimage').css({'height':heightbd});
 
@@ -39,6 +38,4 @@ jQuery(document).ready(function($) {
 			jQuery('header#bdimage').css({'height':heightbd});
 		});
 	};
-
-
 });
