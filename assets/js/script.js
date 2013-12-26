@@ -6,36 +6,40 @@
  *
  * Date: 2013-12-18T10:25Z
  */
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($){
 	// Image Header
 	var urlImg = jQuery('header').data('image');
 	var tmp_img = new Image();
-	tmp_img.src = urlImg;
+		tmp_img.src = urlImg;
+	//console.log(urlImg);
 
-	var url = 'url('+urlImg+')';
+	var url = 'url('+urlImg+')';	
 
-	jQuery('header#bdimage').css({'background-image':url});
+	if(urlImg){		
 
-	tmp_img.onload = function(){
+		jQuery('header#bdimage').css({'background-image':url});
 
-		var height = tmp_img.height;
-		var width = tmp_img.width;
+		tmp_img.onload = function(){
 
-		var ratio = Math.round( width/height ).toFixed(2);
+			var height = tmp_img.height;
+			var width = tmp_img.width;
 
-		var screenWidth = jQuery(window).outerWidth();
-		var heightbd = screenWidth / ratio;
+			var ratio = width/height;
 
-		// console.log(height);
-		// console.log(width);
-		// console.log(ratio);
-
-		jQuery('header#bdimage').css({'height':heightbd});
-
-		jQuery(window).resize(function(){
 			var screenWidth = jQuery(window).outerWidth();
-			var heightbd = screenWidth / ratio;
+			var heightbd = (screenWidth / ratio)-2;
+
+			// console.log(height);
+			// console.log(width);
+			// console.log(ratio);
+
 			jQuery('header#bdimage').css({'height':heightbd});
-		});
-	};
+
+			jQuery(window).resize(function(){
+				var screenWidth = jQuery(window).outerWidth();
+				var heightbd = (screenWidth / ratio)-2;
+				jQuery('header#bdimage').css({'height':heightbd});
+			});
+		};
+	}
 });

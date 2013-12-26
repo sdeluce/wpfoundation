@@ -35,10 +35,10 @@ function foundation_widgets_init() {
 } add_action( 'widgets_init', 'foundation_setup' );
 
 $args = array(
-	'flex-width'    => true,
-	'width'         => 1700,
+	'flex-width'     => true,
+	'width'          => 1700,
 	'flex-height'    => true,
-	'height'        => 250,
+	'height'         => 250,
 );
 add_theme_support( 'custom-header', $args );
 

@@ -16,7 +16,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
 		concat: {
 			options: {
 				separator: ';'
@@ -26,7 +25,6 @@ module.exports = function(grunt) {
 				dest: 'js/script.min.js'
 			}
 		},
-
 		compass: {
 			dist: {
 				options: {
@@ -34,30 +32,27 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
-		imagemin: {                          // Task
-			dynamic: {                         // Another target
+		imagemin: {
+			dynamic: {
 				files: [{
-					expand: true,                  // Enable dynamic expansion
-					cwd: 'img/raw/',                   // Src matches are relative to this path
-					src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-					dest: 'img/'                  // Destination path prefix
+					expand: true,
+					cwd: 'img/raw/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'img/'
 				}]
 			}
 		},
 		svgmin: {
-			dist: {                        // Target
-				files: [{                // Dictionary of files
-					expand: true,        // Enable dynamic expansion.
-					cwd: 'img/svg',        // Src matches are relative to this path.
-					src: ['**/*.svg'],    // Actual pattern(s) to match.
-					dest: 'img/',        // Destination path prefix.
-					ext: '.svg'        // Dest filepaths will have this extension.
-					// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'img/svg',
+					src: ['**/*.svg'],
+					dest: 'img/',
+					ext: '.svg'
 				}]
 			}
 		},
-
 		watch: {
 			js: {
 				files: ['assets/js/*.js','!assets/js/*.min.js'],
