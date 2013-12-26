@@ -4,7 +4,7 @@
 
 #### Et dedans il y a quoi ?
 * [Foundation 5](http://http://foundation.zurb.com/)
-* [Compass](compass-style.org)
+* [Compass](http://compass-style.org)
 * Livereload
 * Grunt
 * Image Min
@@ -18,5 +18,3 @@
 	
 #### Ce qu'il reste à mettre dedans
 * ...
-
-Voir [Grunt](http://www.google.fr)
