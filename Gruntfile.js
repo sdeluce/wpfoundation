@@ -36,22 +36,24 @@ module.exports = function(grunt) {
 		},
 
 		imagemin: {                          // Task
-			static: {                          // Target
-					options: {                       // Target options
-					optimizationLevel: 3
-				},
-				files: {                         // Dictionary of files
-					'dist/img.png': 'src/img.png', // 'destination': 'source'
-					'dist/img.jpg': 'src/img.jpg',
-					'dist/img.gif': 'src/img.gif'
-				}
-			},
 			dynamic: {                         // Another target
 				files: [{
 					expand: true,                  // Enable dynamic expansion
-					cwd: 'src/',                   // Src matches are relative to this path
+					cwd: 'img/raw/',                   // Src matches are relative to this path
 					src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-					dest: 'dist/'                  // Destination path prefix
+					dest: 'img/'                  // Destination path prefix
+				}]
+			}
+		},
+		svgmin: {
+			dist: {                        // Target
+				files: [{                // Dictionary of files
+					expand: true,        // Enable dynamic expansion.
+					cwd: 'img/svg',        // Src matches are relative to this path.
+					src: ['**/*.svg'],    // Actual pattern(s) to match.
+					dest: 'img/',        // Destination path prefix.
+					ext: '.svg'        // Dest filepaths will have this extension.
+					// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
 				}]
 			}
 		},
@@ -77,5 +79,5 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('default', ['jshint','uglify','concat','compass']);
+	grunt.registerTask('default', ['jshint','uglify','concat','compass','imagemin','svgmin']);
 }
