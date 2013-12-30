@@ -18,7 +18,7 @@ function foundation_setup(){
 	add_theme_support( 'custom-background', apply_filters( 'foundation_custom_background_args', array(
 		'default-color' => 'f5f5f5',
 	) ) );
-} add_action( 'after_setup_theme', 'foundation_theme_init' );
+} add_action( 'after_setup_theme', 'foundation_setup' );
 
 
 
