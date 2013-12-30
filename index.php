@@ -31,8 +31,7 @@
 	<div class="large-<?php echo $col_main; ?> columns">
 		<div class="main">
 			<?php get_template_part('loop'); ?>
-			<?php previous_posts_link(); ?>
-			<?php next_posts_link(); ?>
+			<?php foundation_pagination(); ?>
 		</div>
 	</div>
 
