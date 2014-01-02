@@ -3,7 +3,7 @@
 	<!-- section -->
 	<section role="main">
 	
-		<h1><?php _e( 'Archives', 'foundation' ); ?></h1>
+		<h1><?php _e( 'Tag Archive: ', 'foundation' ); echo single_tag_title('', false); ?></h1>
 	
 		<?php get_template_part('loop'); ?>
 		

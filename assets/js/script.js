@@ -13,6 +13,9 @@ jQuery(document).ready(function($){
 		tmp_img.src = urlImg;
 	//console.log(urlImg);
 
+	var menu_header = jQuery('.contain-to-grid').outerHeight();
+	jQuery('body').css({'padding-top':menu_header});
+
 	var url = 'url('+urlImg+')';	
 
 	if(urlImg){		

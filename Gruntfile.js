@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: ['assets/js/script.min.js', 'assets/js/vendor/custom.modernizr.min.js', 'assets/js/foundation.min.js'],
-				dest: 'js/script.min.js'
+				dest: 'js/script.js'
 			}
 		},
 		compass: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 			dynamic: {
 				files: [{
 					expand: true,
-					cwd: 'img/raw/',
+					cwd: 'assets/img/raw/',
 					src: ['**/*.{png,jpg,gif}'],
 					dest: 'img/'
 				}]
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: 'img/svg',
+					cwd: 'assets/img/svg',
 					src: ['**/*.svg'],
 					dest: 'img/',
 					ext: '.svg'

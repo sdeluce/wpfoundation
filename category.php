@@ -3,7 +3,7 @@
 	<!-- section -->
 	<section role="main">
 	
-		<h1><?php _e( 'Archives', 'foundation' ); ?></h1>
+		<h1><?php _e( 'Categories for ', 'foundation' ); single_cat_title(); ?></h1>
 	
 		<?php get_template_part('loop'); ?>
 		

@@ -2,7 +2,7 @@
   "compass",
   "compass/reset",
   "lib/foundation",
-  "foundation-icons/foundation-icons";
+  "foundation-icons/general_enclosed_foundicons";
 
 // $primary-color: #B163A3;
 
@@ -16,5 +16,8 @@ body {
 	}
 	.contain-to-grid.fixed {
 		// border-bottom: 2px solid darken($primary-color,10);
+	}
+	a.post-edit-link:before {
+
 	}
 }

@@ -1,19 +1,43 @@
-<?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post(); ?>
-    <div id="<?php the_ID(); ?>" <?php post_class(); ?>>
-      <h3 class="post-title">
-        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-      </h3>
-      <p class="post-info">
-        Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_author(); ?>.
-      </p>
-      <div class="post-excerpt">
-        <?php the_excerpt(); ?>
-      </div>
-    </div>
-  <?php endwhile; ?>
-<?php else : ?>
-  <p class="nothing">
-    Il n'y a pas de Post à afficher !
-  </p>
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	
+	<!-- article -->
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+		<!-- post thumbnail -->
+		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
+			</a>
+		<?php endif; ?>
+		<!-- /post thumbnail -->
+		
+		<!-- post title -->
+		<h2>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+		</h2>
+		<!-- /post title -->
+		
+		<!-- post details -->
+		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+		<span class="author"><?php _e( 'Published by', 'foundation' ); ?> <?php the_author_posts_link(); ?></span>
+		<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'foundation' ), __( '1 Comment', 'foundation' ), __( '% Comments', 'foundation' )); ?></span>
+		<!-- /post details -->
+		
+		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+		
+		<i class="gen-enclosed foundicon-edit"><?php edit_post_link(); ?></i>
+		
+	</article>
+	<!-- /article -->
+	
+<?php endwhile; ?>
+
+<?php else: ?>
+
+	<!-- article -->
+	<article>
+		<h2><?php _e( 'Sorry, nothing to display.', 'foundation' ); ?></h2>
+	</article>
+	<!-- /article -->
+
 <?php endif; ?>
