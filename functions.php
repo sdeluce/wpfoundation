@@ -167,7 +167,7 @@ function register_foundation_menu()
 {
 	register_nav_menus(array( // Using array to specify more menus if needed
 		'header-menu' 	=> __('Header Menu', 'foundation'), // Main Navigation
-		'sidebar-menu' 	=> __('Sidebar Menu', 'foundation'), // Sidebar Navigation
+		'footer-menu' 	=> __('Footer Menu', 'foundation'), // Sidebar Navigation
 		'extra-menu' 	=> __('Extra Menu', 'foundation') // Extra Navigation if needed (duplicate as many as you need!)
 	));
 }
@@ -228,6 +228,16 @@ if (function_exists('register_sidebar'))
 		'name' => __('Right Sidebar', 'foundation'),
 		'description' => __('Description for this widget-area...', 'foundation'),
 		'id' => 'right-area',
+		'before_widget' => '<div id="%1$s" class="%2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+	// Define Sidebar Widget Area 2
+	register_sidebar(array(
+		'name' => __('Footer1', 'foundation'),
+		'description' => __('Description for this widget-area...', 'foundation'),
+		'id' => 'footer-one',
 		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',

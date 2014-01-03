@@ -44,7 +44,7 @@
 
 					<?php
 					$menu = array(
-						'theme_location'  => 'primary',
+						'theme_location'  => 'header-menu',
 						'menu'            => 'test',
 						'container'       => false,
 						'container_class' => 'top-bar-section',
@@ -81,4 +81,4 @@
 				<?php endif; ?>
 			</div>
 		</header>
-			<div class="row">
+		<div class="row">
