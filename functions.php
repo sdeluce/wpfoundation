@@ -85,9 +85,9 @@ if (function_exists('add_theme_support'))
 		'width'						=> 1500,
 		'height'					=> 310,
 		'random-default'			=> false,
-		'wp-head-callback'			=> $wphead_cb,
-		'admin-head-callback'		=> $adminhead_cb,
-		'admin-preview-callback'	=> $adminpreview_cb
+		'wp-head-callback'			=> '',
+		'admin-head-callback'		=> '',
+		'admin-preview-callback'	=> ''
 	));
 
 	// Enables post and comment RSS feed links to head
@@ -487,10 +487,12 @@ add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'foundation_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 remove_action('wp_head', 'wp_generator'); // Remove Wordpress version
+
 
 // Shortcodes
 add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.
