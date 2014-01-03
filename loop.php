@@ -25,8 +25,7 @@
 		
 		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 		
-		<i class="gen-enclosed foundicon-edit"><?php edit_post_link(); ?></i>
-		
+		<?php edit_post_link(); ?>
 	</article>
 	<!-- /article -->
 	

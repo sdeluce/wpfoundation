@@ -14,7 +14,42 @@
 function foundation_login_css()  {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css" />';
 }
+function grid($col) {
+//	Largeur des sidebars
+	$col_left = 3;
+	$col_right = 3;
 
+//	Teste si sidebar ou non
+	if (is_active_sidebar('left-area') && is_active_sidebar('right-area')) {
+		$col_main = 12 - ($col_left + $col_right);
+		$col_left = $col_left;
+		$col_right = $col_right;
+	} else if (is_active_sidebar('left-area')){
+		$col_main = 12 - $col_left;
+		$col_left = $col_left;
+		$col_right = 0;
+	} else if (is_active_sidebar('right-area')){
+		$col_main = 12 - $col_right;
+		$col_left = 0;
+		$col_right = $col_right;
+	} else {
+		$col_main = 12;
+		$col_left = 0;
+		$col_right = 0;
+	}
+
+	switch ($col) {
+		case 'left':
+			echo $col_left;
+			break;
+		case 'main':
+			echo $col_main;
+			break;
+		case 'right':
+			echo $col_right;
+			break;
+	}
+}
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
@@ -179,9 +214,9 @@ if (function_exists('register_sidebar'))
 {
 	// Define Sidebar Widget Area 1
 	register_sidebar(array(
-		'name' => __('Widget Area 1', 'foundation'),
+		'name' => __('Left Sidebar', 'foundation'),
 		'description' => __('Description for this widget-area...', 'foundation'),
-		'id' => 'widget-area-1',
+		'id' => 'left-area',
 		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
@@ -190,9 +225,9 @@ if (function_exists('register_sidebar'))
 
 	// Define Sidebar Widget Area 2
 	register_sidebar(array(
-		'name' => __('Widget Area 2', 'foundation'),
+		'name' => __('Right Sidebar', 'foundation'),
 		'description' => __('Description for this widget-area...', 'foundation'),
-		'id' => 'widget-area-2',
+		'id' => 'right-area',
 		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
@@ -445,6 +480,7 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
+remove_action('wp_head', 'wp_generator'); // Remove Wordpress version
 
 // Shortcodes
 add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.

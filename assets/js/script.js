@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
 	//console.log(urlImg);
 
 	var menu_header = jQuery('.contain-to-grid').outerHeight();
-	jQuery('body').css({'padding-top':menu_header});
+	jQuery('header#bdimage').css({'margin-top':menu_header});
 
 	var url = 'url('+urlImg+')';	
 
