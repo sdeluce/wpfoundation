@@ -26,11 +26,6 @@
 	<body <?php body_class('antialiased'); ?>>
 		<div class="row">
 			<div class="contain-to-grid fixed" >
-				<nav class="top-bar show-for-small" data-topbar>
-				  <a class="left-off-canvas-toggle menu-icon">
-				    <span><?php bloginfo('name'); ?></span>
-				  </a>
-				</nav>
 				<nav class="top-bar hide-for-small-only" data-topbar>
 					<ul class="title-area">
 						<li class="name">

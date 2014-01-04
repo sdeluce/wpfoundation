@@ -50,6 +50,18 @@ function grid($col) {
 			break;
 	}
 }
+
+//Deletes empty classes and removes the sub menu class
+function change_submenu_class($menu) {
+    $menu = preg_replace('/ class="sub-menu"/','/ class="dropdown" /',$menu);
+    return $menu;
+}
+function change_menu_subclass($menu) {
+    $menu = preg_replace('/ class="menu-item-has-children"/','/ class="dropdown" /',$menu);
+    return $menu;
+}
+add_filter ('wp_nav_menu','change_submenu_class');
+add_filter ('wp_nav_menu','change_menu_subclass');
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/

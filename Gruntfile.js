@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'assets/js/script.min.js': ['assets/js/script.js'],
-					'assets/js/foundation.min.js': ['assets/js/foundation/foundation.js','assets/js/foundation/foundation.topbar.js','assets/js/foundation/foundation.offcanvas.js']
+					'assets/js/foundation.min.js': ['assets/js/foundation/foundation.js','assets/js/foundation/foundation.topbar.js']
 				}
 			}
 		},
