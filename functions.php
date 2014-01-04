@@ -162,10 +162,11 @@ function foundation_header_scripts()
 	if (!is_admin()) {
 
 		wp_deregister_script('jquery'); // Deregister WordPress jQuery
-		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.9.1'); // Google CDN jQuery
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2'); // Google CDN jQuery
 		wp_enqueue_script('jquery'); // Enqueue it!
 
-		wp_register_script('conditionizr', 'http://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.0.0/conditionizr.js', array(), '4.0.0'); // Conditionizr
+
+		wp_register_script('conditionizr', 'http:////cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0'); // Conditionizr
 		wp_enqueue_script('conditionizr'); // Enqueue it!
 
 		// wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
@@ -518,7 +519,8 @@ add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'foundation_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
-add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
+// add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
+add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
