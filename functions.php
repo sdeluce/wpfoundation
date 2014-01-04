@@ -109,6 +109,24 @@ if (function_exists('add_theme_support'))
 	load_theme_textdomain('foundation', get_template_directory() . '/languages');
 }
 
+// Minifier le html
+function gkp_html_minify_start()  {
+    ob_start( 'gkp_html_minyfy_finish' );
+}
+ 
+function gkp_html_minyfy_finish( $html )  {
+ 
+   // Suppression des commentaires HTML, 
+   // sauf les commentaires conditionnels pour IE
+   $html = preg_replace('/<!--(?!s*(?:[if [^]]+]|!|>))(?:(?!-->).)*-->/s', '', $html);
+ 
+   // Suppression des espaces vides
+   $html = str_replace(array("\r\n", "\r", "\n", "\t"), '', $html);
+   while ( stristr($html, '  ')) 
+       $html = str_replace('  ', ' ', $html);
+ 
+   return $html;
+}
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
@@ -150,8 +168,8 @@ function foundation_header_scripts()
 		wp_register_script('conditionizr', 'http://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.0.0/conditionizr.js', array(), '4.0.0'); // Conditionizr
 		wp_enqueue_script('conditionizr'); // Enqueue it!
 
-		wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
-		wp_enqueue_script('modernizr'); // Enqueue it!
+		// wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
+		// wp_enqueue_script('modernizr'); // Enqueue it!
 
 		wp_register_script('foundationscripts', get_template_directory_uri() . '/js/script.js', array(), '1.0.0'); // Custom scripts
 		wp_enqueue_script('foundationscripts'); // Enqueue it!
@@ -466,6 +484,7 @@ add_action('init', 'register_foundation_menu'); // Add Foundation Menu
 // add_action('init', 'create_post_type_html5'); // Add our Foundation Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'foundation_pagination'); // Add our HTML5 Pagination
+add_action('get_header', 'gkp_html_minify_start'); // Minifier le html
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
