@@ -8,7 +8,7 @@
 					<?php 
 					$footer = array(
 						'theme_location'  => 'footer-menu',
-						'menu'            => 'test',
+						'menu'            => '',
 						'container'       => false,
 						'container_class' => 'top-bar-section',
 						'container_id'    => '',
@@ -24,7 +24,7 @@
 						'depth'           => 0,
 						'walker'          => ''
 					);
-					foundation_nav( $footer ); ?>
+					wp_nav_menu($footer); ?>
 				</p>
 				<!-- copyright -->
 				<p class="copyright">

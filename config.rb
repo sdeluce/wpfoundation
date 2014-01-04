@@ -11,7 +11,7 @@ javascripts_dir = "js"
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 environment = :development #development production
-output_style = :nested
+
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
@@ -24,6 +24,9 @@ if environment != :production
     #enable_sourcemaps = true
 	#sass_options = {:sourcemap => true }
 	sass_options = { :debug_info => true }
+	output_style = :nested
+else
+	output_style = :compressed
 end
 
 # If you prefer the indented syntax, you might want to regenerate this
