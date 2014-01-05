@@ -56,13 +56,6 @@ function change_submenu_class($menu) {
     $menu = preg_replace('/ class="sub-menu"/','/ class="dropdown" /',$menu);
     return $menu;
 }
-function change_menu_subclass($menu) {
-    $menu = preg_replace('/ class="menu-item-has-children"/','/ class="dropdown" /',$menu);
-    return $menu;
-}
-add_filter ('wp_nav_menu','change_submenu_class');
-add_filter ('wp_nav_menu','change_menu_subclass');
-
 
 function gkp_prefetch() {
 	
@@ -78,7 +71,7 @@ function gkp_prefetch() {
    <?php
    }
 }
-add_action('wp_head', 'gkp_prefetch');
+
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
@@ -538,6 +531,8 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove 
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 // add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
 add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
+add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
+add_action('wp_head', 'gkp_prefetch'); // Optimisation
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
