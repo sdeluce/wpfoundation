@@ -62,6 +62,23 @@ function change_menu_subclass($menu) {
 }
 add_filter ('wp_nav_menu','change_submenu_class');
 add_filter ('wp_nav_menu','change_menu_subclass');
+
+
+function gkp_prefetch() {
+	
+    if ( is_single() ) {  ?>
+		
+	<!-- Préchargement de la page d\'accueil -->
+	<link rel="prefetch" href="<?php echo home_url(); ?>" />
+	<link rel="prerender" href="<?php echo home_url(); ?>" />
+		
+	<!-- Préchargement de l\'article suivant -->
+	<link rel="prefetch" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?>" />
+	<link rel="prerender" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?>" />
+   <?php
+   }
+}
+add_action('wp_head', 'gkp_prefetch');
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
