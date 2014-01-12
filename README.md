@@ -1,6 +1,6 @@
 ![WP Foundation Icon](https://raw.github.com/boluge/wpfoundation/master/img/wpfoundation.jpg) 
 
-#Blank Wordpress Theme Foundation 5
+#Blank Wordpress Theme
 
 #### Et dedans il y a quoi ?
 * [Foundation 5](http://http://foundation.zurb.com/)
@@ -8,6 +8,8 @@
 * [Livereload](http://livereload.com/)
 * [Grunt](http://gruntjs.com/)
 * Image Min
+
+#### Que rajouter ?
 * Retina
 * [Hammer.js](http://eightmedia.github.io/hammer.js/)
 
@@ -17,5 +19,5 @@
 
 #### Lancer Grunt
 	grunt watch
-
-![logos](https://raw.github.com/boluge/wpfoundation/master/img/logos.jpg) 
+____
+![logos](https://raw.github.com/boluge/wpfoundation/master/img/logos.jpg)
