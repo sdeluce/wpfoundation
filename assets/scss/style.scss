@@ -1,23 +1,2 @@
-@import
-  "compass",
-  "compass/reset",
-  "lib/foundation",
-  "foundation-icons/general_enclosed_foundicons";
+@import "lib/adds";
 
-// $primary-color: #B163A3;
-
-*:focus {outline: none;}
-
-body {
-	header {
-		background-size: 100%;
-		background-position: center center;
-		background-repeat: no-repeat;
-	}
-	.contain-to-grid.fixed {
-		// border-bottom: 2px solid darken($primary-color,10);
-	}
-	a.post-edit-link:before {
-
-	}
-}

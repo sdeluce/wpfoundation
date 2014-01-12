@@ -70,7 +70,30 @@ function gkp_prefetch() {
    <?php
    }
 }
+function standard_wrap_embeds( $html, $url, $args ) {
 
+  if( 'video' == get_post_format( get_the_ID() ) ) {
+    $html = '<div class="video-wrapper">' . $html . '</div>';
+    if( is_single() || is_page() ) {
+      $html .= '<h1 class="post-title entry-title">';
+      $html .= get_the_title();
+      $html .= '</h1>';
+    } else {
+      $titleAttribute = strip_tags( get_the_title() );
+      $html .= '<h2 class="post-title entry-title"><a href="';
+      $html .= get_post_permalink( get_the_ID() );
+      $html .= '" rel="bookmark" title="';
+      $html .= $titleAttribute;
+      $html .= '">';
+      $html .= get_the_title();
+      $html .= '</a></h2>';
+    } // end if
+  } // end if
+ 
+return $html;
+ 
+} // end standard_wrap_embebds
+add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ;
 $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' );
 
 /*------------------------------------*\
