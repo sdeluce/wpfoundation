@@ -2730,19 +2730,19 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000310}}
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 @media screen and (max-width: 60rem) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000317}}
   body .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     /* 16:9 */
     padding-top: 25px;
     height: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000322}}
     body .video-wrapper iframe {
       position: absolute;
       top: 0;
