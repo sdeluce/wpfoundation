@@ -22,7 +22,6 @@
 		<?php wp_head(); ?>
 		<script>
         // conditionizr.com
-        // configure environment tests
         conditionizr.config({
             assets: '<?php echo get_template_directory_uri(); ?>',
             tests: {}
@@ -34,8 +33,8 @@
 		<div class="row">
 			<header id="bdimage" <?php if ( get_header_image() ) : ?>data-image="<?php header_image(); ?>"<?php endif; ?>>
 				<?php if ( !get_header_image() ) : ?>
-					<?php if (is_single()) : ?>
-						<p><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></p>
+					<?php if (is_single() || is_page()): ?>
+						<p class="h1"><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></p>
 						<p><?php bloginfo('description'); ?></p>
 					<?php else : ?>
 						<h1><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></h1>

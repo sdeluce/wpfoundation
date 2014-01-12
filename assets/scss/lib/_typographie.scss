@@ -56,7 +56,7 @@ body {
   		border: 0;
 	}
 	@for $i from 1 through 6 {
-		h#{$i}{
+		p.h#{$i}, h#{$i}{
 			font-size: (1+(($lineHeight - 1)/6) * (6- $i))*1em;
 			font-family: $titleFont;
 		}
