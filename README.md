@@ -8,6 +8,7 @@
 * [Livereload](http://livereload.com/)
 * [Grunt](http://gruntjs.com/)
 * Image Min
+* SVG Min
 
 #### Que rajouter ?
 * Retina
