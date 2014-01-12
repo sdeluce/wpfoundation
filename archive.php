@@ -5,7 +5,6 @@
 	
 		<h1><?php _e( 'Archives', 'foundation' ); ?></h1>
 	
-		<?php get_template_part('loop'); ?>
 		<?php 
 		//	Start the Loop.
 			while ( have_posts() ) : the_post();

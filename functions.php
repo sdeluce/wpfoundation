@@ -425,30 +425,6 @@ function html5wp_custom_post($length)
 	return 40;
 }
 
-// Create the Custom Excerpts callback
-function html5wp_excerpt($length_callback = '', $more_callback = '')
-{
-	global $post;
-	if (function_exists($length_callback)) {
-		add_filter('excerpt_length', $length_callback);
-	}
-	if (function_exists($more_callback)) {
-		add_filter('excerpt_more', $more_callback);
-	}
-	$output = get_the_excerpt();
-	$output = apply_filters('wptexturize', $output);
-	$output = apply_filters('convert_chars', $output);
-	$output = '<p>' . $output . '</p>';
-	echo $output;
-}
-
-// Custom View Article link to Post
-function foundation_view_article($more)
-{
-	global $post;
-	return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'foundation') . '</a>';
-}
-
 // Remove Admin bar
 function remove_admin_bar()
 {

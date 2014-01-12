@@ -22,7 +22,6 @@
 		<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'foundation' ), __( '1 Comment', 'foundation' ), __( '% Comments', 'foundation' )); ?></span>
 		<!-- /post details -->
 		
-		<?php // html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 		<?php
 			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
 			wp_link_pages( array(
