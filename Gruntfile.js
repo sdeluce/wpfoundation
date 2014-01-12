@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['assets/js/script.min.js', 'assets/js/vendor/custom.modernizr.min.js', 'assets/js/foundation.min.js'],
+				src: ['assets/js/script.min.js'/*, 'assets/js/foundation.min.js'*/],
 				dest: 'js/script.js'
 			}
 		},
@@ -54,6 +54,13 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
+			php: {
+				files: ['**.php'],
+				options: {
+					spawn: false,
+					livereload: true
+				}
+			},
 			js: {
 				files: ['assets/js/*.js','!assets/js/*.min.js'],
 				tasks: ['jshint','uglify','concat'],

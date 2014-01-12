@@ -5,26 +5,7 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 				<p id="footerMenu">
-					<?php 
-					$footer = array(
-						'theme_location'  => 'footer-menu',
-						'menu'            => '',
-						'container'       => false,
-						'container_class' => 'top-bar-section',
-						'container_id'    => '',
-						'menu_class'      => '',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<section class="top-bar-section"><ul class="right">%3$s</ul></section>',
-						'depth'           => 0,
-						'walker'          => ''
-					);
-					wp_nav_menu($footer); ?>
+					<?php footer_nav ();?>
 				</p>
 				<!-- copyright -->
 				<p class="copyright">

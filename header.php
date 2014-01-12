@@ -32,46 +32,7 @@
 	</head>
 	<body <?php body_class('antialiased'); ?>>
 		<div class="row">
-			<div class="contain-to-grid fixed" >
-				<nav class="top-bar" data-topbar>
-					<ul class="title-area">
-						<li class="name">
-							<?php if (is_single()) : ?>
-								<p><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></p>
-							<?php else : ?>
-								<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-							<?php endif; ?>
-						</li>
-					</ul>
-
-					<?php
-					$menu = array(
-						'theme_location'  => 'header-menu',
-						'menu'            => 'test',
-						'container'       => false,
-						'container_class' => 'top-bar-section',
-						'container_id'    => '',
-						'menu_class'      => '',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<section class="top-bar-section"><ul class="right">%3$s</ul></section>',
-						'depth'           => 0,
-						'walker'          => ''
-					);
-					?>
-					<section class="top-bar-section">
-						<?php foundation_nav( $menu ); ?>
-					</section>
-				</nav>
-			</div>
-		</div>
-		<header id="bdimage" <?php if ( get_header_image() ) : ?>data-image="<?php header_image(); ?>"<?php endif; ?>>
-			<div class="row">
+			<header id="bdimage" <?php if ( get_header_image() ) : ?>data-image="<?php header_image(); ?>"<?php endif; ?>>
 				<?php if ( !get_header_image() ) : ?>
 					<?php if (is_single()) : ?>
 						<p><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></p>
@@ -80,7 +41,12 @@
 						<h1><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 						<p><?php bloginfo('description'); ?></p>
 					<?php endif; ?>
+				<?php else: ?>
+					<img width="100%" src="<?php header_image(); ?>" />
 				<?php endif; ?>
-			</div>
-		</header>
+			</header>
+			<nav class="top-bar" data-topbar>
+				<?php foundation_nav( $menu ); ?>
+			</nav>
+		</div>
 		<div class="row">

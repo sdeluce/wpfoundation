@@ -59,18 +59,19 @@ function change_submenu_class($menu) {
 
 function gkp_prefetch() {
 	
-    if ( is_single() ) {  ?>
-		
-	<!-- Préchargement de la page d\'accueil -->
-	<link rel="prefetch" href="<?php echo home_url(); ?>" />
-	<link rel="prerender" href="<?php echo home_url(); ?>" />
-		
-	<!-- Préchargement de l\'article suivant -->
-	<link rel="prefetch" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?>" />
-	<link rel="prerender" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?>" />
+    if ( is_single() ) {  ?>		
+		<!-- Préchargement de la page d\'accueil -->
+		<link rel="prefetch" href="<?php echo home_url(); ?>" />
+		<link rel="prerender" href="<?php echo home_url(); ?>" />
+			
+		<!-- Préchargement de l\'article suivant -->
+		<link rel="prefetch" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?>" />
+		<link rel="prerender" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?>" />
    <?php
    }
 }
+
+$post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' );
 
 /*------------------------------------*\
 	Theme Support
@@ -149,7 +150,7 @@ function foundation_nav()
 			'theme_location'  => 'header-menu',
 			'menu'            => '',
 			'container'       => false,
-			'container_class' => 'top-bar-section',
+			'container_class' => '',
 			'container_id'    => '',
 			'menu_class'      => '',
 			'menu_id'         => '',
@@ -159,7 +160,31 @@ function foundation_nav()
 			'after'           => '',
 			'link_before'     => '',
 			'link_after'      => '',
-			'items_wrap'      => '<section class="top-bar-section"><ul class="right">%3$s</ul></section>',
+			'items_wrap'      => '<ul>%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		)
+	);
+}
+// Footer nav
+function footer_nav()
+{
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'footer-menu',
+			'menu'            => '',
+			'container'       => false,
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => '',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul>%3$s</ul>',
 			'depth'           => 0,
 			'walker'          => ''
 		)
@@ -179,8 +204,8 @@ function foundation_header_scripts()
 		wp_register_script('conditionizr', 'http:////cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0'); // Conditionizr
 		wp_enqueue_script('conditionizr'); // Enqueue it!
 
-		// wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
-		// wp_enqueue_script('modernizr'); // Enqueue it!
+		wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
+		wp_enqueue_script('modernizr'); // Enqueue it!
 
 		wp_register_script('foundationscripts', get_template_directory_uri() . '/js/script.js', array(), '1.0.0'); // Custom scripts
 		wp_enqueue_script('foundationscripts'); // Enqueue it!
@@ -531,6 +556,7 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove 
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 // add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
 add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
+add_theme_support('post-formats', $post_formats); // Ajout de Post Format
 add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
 add_action('wp_head', 'gkp_prefetch'); // Optimisation
 

@@ -4,7 +4,7 @@
 	<section role="main">
 	
 		<h1><?php the_title(); ?></h1>
-		<h2>Front Page</h2>
+		<h2>To change edit front-page.php</h2>
 	
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
@@ -23,7 +23,6 @@
 		<!-- /article -->
 		
 	<?php endwhile; ?>
-	
 	<?php else: ?>
 	
 		<!-- article -->

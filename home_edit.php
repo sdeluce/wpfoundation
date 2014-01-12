@@ -4,7 +4,7 @@
 	<section role="main">
 	
 		<h1><?php the_title(); ?></h1>
-		<h2>Home Page</h2>
+		<h2>To change edit home.php</h2>
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
 		<!-- article -->
