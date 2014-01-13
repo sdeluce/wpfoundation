@@ -516,7 +516,7 @@ add_action('wp_print_scripts', 'foundation_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'foundation_styles'); // Add Theme Stylesheet
 add_action('init', 'register_foundation_menu'); // Add Foundation Menu
-// add_action('init', 'create_post_type_html5'); // Add our Foundation Custom Post Type
+add_action('init', 'create_post_type_html5'); // Add our Foundation Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'foundation_pagination'); // Add our HTML5 Pagination
 add_action('get_header', 'gkp_html_minify_start'); // Minifier le html
@@ -574,6 +574,18 @@ add_shortcode('foundation_shortcode_demo_2', 'foundation_shortcode_demo_2'); // 
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
+function add_menu_icons_styles(){
+?>
+ 
+<style>
+#adminmenu .menu-icon-foundation div.wp-menu-image:before {
+  content: '\f155';
+}
+</style>
+ 
+<?php
+}
+add_action( 'admin_head', 'add_menu_icons_styles' );
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
@@ -583,22 +595,24 @@ function create_post_type_html5()
 	register_post_type('foundation', // Register Custom Post Type
 		array(
 		'labels' => array(
-			'name' => __('Foundation Custom Post', 'foundation'), // Rename these to suit
-			'singular_name' => __('Foundation Custom Post', 'foundation'),
+			'name' => __('Custom Post', 'foundation'), // Rename these to suit
+			'singular_name' => __('Custom Post', 'foundation'),
 			'add_new' => __('Add New', 'foundation'),
-			'add_new_item' => __('Add New Foundation Custom Post', 'foundation'),
+			'add_new_item' => __('Add New Custom Post', 'foundation'),
 			'edit' => __('Edit', 'foundation'),
-			'edit_item' => __('Edit Foundation Custom Post', 'foundation'),
-			'new_item' => __('New Foundation Custom Post', 'foundation'),
-			'view' => __('View Foundation Custom Post', 'foundation'),
-			'view_item' => __('View Foundation Custom Post', 'foundation'),
-			'search_items' => __('Search Foundation Custom Post', 'foundation'),
-			'not_found' => __('No Foundation Custom Posts found', 'foundation'),
-			'not_found_in_trash' => __('No Foundation Custom Posts found in Trash', 'foundation')
+			'edit_item' => __('Edit Custom Post', 'foundation'),
+			'new_item' => __('New Custom Post', 'foundation'),
+			'view' => __('View Custom Post', 'foundation'),
+			'view_item' => __('View Custom Post', 'foundation'),
+			'search_items' => __('Search Custom Post', 'foundation'),
+			'not_found' => __('No Custom Posts found', 'foundation'),
+			'not_found_in_trash' => __('No Custom Posts found in Trash', 'foundation')
 		),
 		'public' => true,
 		'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
 		'has_archive' => true,
+		'menu_icon' => '',
+		'menu_position' => 5,
 		'supports' => array(
 			'title',
 			'editor',
