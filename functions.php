@@ -96,6 +96,12 @@ return $html;
 add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ;
 $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' );
 
+// Add Dashicons in the theme
+/*
+	https://github.com/melchoyce/dashicons
+	http://melchoyce.github.io/dashicons/
+	http://jameskoster.co.uk/work/using-wordpress-3-8s-dashicons-theme-plugin/
+*/
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
@@ -161,6 +167,7 @@ function gkp_html_minyfy_finish( $html )  {
  
    return $html;
 }
+
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
