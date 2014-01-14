@@ -11,7 +11,9 @@
 		
 		<!-- post title -->
 		<h2>
-			<a class="entry-format" href="<?php echo esc_url( get_post_format_link( 'gallery' ) ); ?>"><?php echo get_post_format_string( 'gallery' ); ?></a> 
+			<a class="entry-format gallery" href="<?php echo esc_url( get_post_format_link( 'gallery' ) ); ?>">
+				<span><?php echo get_post_format_string( 'gallery' ); ?></span>
+			</a> 
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 		</h2>
 		<!-- /post title -->

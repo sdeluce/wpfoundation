@@ -102,6 +102,10 @@ $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'st
 	http://melchoyce.github.io/dashicons/
 	http://jameskoster.co.uk/work/using-wordpress-3-8s-dashicons-theme-plugin/
 */
+function wpc_dashicons() {
+	wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'wpc_dashicons');
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/

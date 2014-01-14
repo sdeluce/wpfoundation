@@ -2508,241 +2508,69 @@ body {
   body ol {
     list-style-type: upper-roman; }
 
-/* font-face */
-@font-face {
-  font-family: "GeneralEnclosedFoundicons";
-  src: url("../fonts/general_enclosed_foundicons.eot");
-  src: url("../fonts/general_enclosed_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/general_enclosed_foundicons.woff") format("woff"), url("../fonts/general_enclosed_foundicons.ttf") format("truetype"), url("../fonts/general_enclosed_foundicons.svg#GeneralEnclosedFoundicons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\000034}}
+body h2 a.entry-format.video:before {
+  content: "\f126";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\000038}}
+body h2 a.entry-format.audio:before {
+  content: "\f127";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000312}}
+body h2 a.entry-format.aside:before {
+  content: "\f123";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000316}}
+body h2 a.entry-format.chat:before {
+  content: "\f125";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000320}}
+body h2 a.entry-format.gallery:before {
+  content: "\f161";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000324}}
+body h2 a.entry-format.quote:before {
+  content: "\f120";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000328}}
+body h2 a.entry-format.link:before {
+  content: "\f103";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000332}}
+body h2 a.entry-format.image:before {
+  content: "\f128";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000336}}
+body h2 a.entry-format.quote:before {
+  content: "\f122";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000340}}
+body h2 a.entry-format.status:before {
+  content: "\f130";
+  font-family: dashicons; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_icons\.scss}line{font-family:\0000344}}
+body h2 a.entry-format span {
+  display: none; }
 
-/* global foundicon styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_general_enclosed_foundicons\.scss}line{font-family:\000037}}
-[class*="foundicon-"] {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: inherit;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0 0;
-  background-repeat: repeat; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_general_enclosed_foundicons\.scss}line{font-family:\0000317}}
-[class*="foundicon-"]:before {
-  font-family: "GeneralEnclosedFoundicons";
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit; }
-
-/* icons */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-settings:before {
-  content: "\f000"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-heart:before {
-  content: "\f001"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-star:before {
-  content: "\f002"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-plus:before {
-  content: "\f003"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-minus:before {
-  content: "\f004"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-checkmark:before {
-  content: "\f005"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-remove:before {
-  content: "\f006"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-mail:before {
-  content: "\f007"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-calendar:before {
-  content: "\f008"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-page:before {
-  content: "\f009"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-tools:before {
-  content: "\f00a"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-globe:before {
-  content: "\f00b"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-home:before {
-  content: "\f00c"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-quote:before {
-  content: "\f00d"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-people:before {
-  content: "\f00e"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-monitor:before {
-  content: "\f00f"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-laptop:before {
-  content: "\f010"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-phone:before {
-  content: "\f011"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-cloud:before {
-  content: "\f012"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-error:before {
-  content: "\f013"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-right-arrow:before {
-  content: "\f014"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-left-arrow:before {
-  content: "\f015"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-up-arrow:before {
-  content: "\f016"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-down-arrow:before {
-  content: "\f017"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-trash:before {
-  content: "\f018"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-add-doc:before {
-  content: "\f019"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-edit:before {
-  content: "\f01a"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-lock:before {
-  content: "\f01b"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-unlock:before {
-  content: "\f01c"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-refresh:before {
-  content: "\f01d"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-paper-clip:before {
-  content: "\f01e"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-video:before {
-  content: "\f01f"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-photo:before {
-  content: "\f020"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-graph:before {
-  content: "\f021"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-idea:before {
-  content: "\f022"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-mic:before {
-  content: "\f023"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-cart:before {
-  content: "\f024"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-address-book:before {
-  content: "\f025"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-compass:before {
-  content: "\f026"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-flag:before {
-  content: "\f027"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-location:before {
-  content: "\f028"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-clock:before {
-  content: "\f029"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-folder:before {
-  content: "\f02a"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-inbox:before {
-  content: "\f02b"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-website:before {
-  content: "\f02c"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-smiley:before {
-  content: "\f02d"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/foundation-icons\/_settings\.scss}line{font-family:\000036}}
-.foundicon-search:before {
-  content: "\f02e"; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\000039}}
 *:focus {
   outline: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000311}}
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 @media screen and (max-width: 60rem) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000318}}
   body .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     /* 16:9 */
     padding-top: 25px;
     height: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wordpress\/wp-content\/themes\/foundation\/assets\/scss\/lib\/_adds\.scss}line{font-family:\0000323}}
     body .video-wrapper iframe {
       position: absolute;
       top: 0;
