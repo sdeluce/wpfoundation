@@ -48,4 +48,5 @@
 				<?php foundation_nav( $menu ); ?>
 			</nav>
 		</div>
+		<p class="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, perspiciatis, iure quis quam illum accusamus aliquam facilis officia culpa tenetur porro incidunt maiores ipsa! Dolorum magni et suscipit reiciendis consequuntur!</p>
 		<div class="row">
