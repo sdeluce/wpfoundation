@@ -1,24 +1,24 @@
-![WP Foundation Icon](https://raw.github.com/boluge/wpfoundation/master/img/wpfoundation.jpg) 
-
 #Blank Wordpress Theme
-
+___
 #### Et dedans il y a quoi ?
-* [Foundation 5](http://http://foundation.zurb.com/)
-* [Compass](http://compass-style.org)
-* [Livereload](http://livereload.com/)
-* [Grunt](http://gruntjs.com/)
+* Grid Foundation 5
+* Compass
 * Image Min
 * SVG Min
+* Post Format
+* Custom Post Type
+* Dashicon Wp 3.8
 
 #### Que rajouter ?
-* Retina
-* [Hammer.js](http://eightmedia.github.io/hammer.js/)
-
+* Support Retina
+* Compass Sprite CSS
+* Favicon ios, Android, Windows, …
+* Optim SEO
+___
 #### Utiliser Grunt
+######Mettre en place Grunt
 	cd [mondossier]
 	npm install
-
-#### Lancer Grunt
+###### Lancer Grunt
 	grunt watch
-____
-![logos](https://raw.github.com/boluge/wpfoundation/master/img/logos.jpg)
+	
