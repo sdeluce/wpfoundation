@@ -30,5 +30,5 @@ if( $divide == true ){
 	 
 	}
 } else {
-	include( $templatepath.'/assets/inc/oldfunctions.php' );
+	include( $templatepath.'/assets/inc/functions.php' );
 }

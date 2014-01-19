@@ -8,7 +8,7 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Login override CSS  --other--
+// Login override CSS  --Front--
 function foundation_login_css()  {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css" />';
 }
@@ -57,7 +57,7 @@ function change_submenu_class($menu) {
     return $menu;
 }
 
-// Préchargement des pages 
+// Préchargement des pages --front--
 function gkp_prefetch() {	
     if ( is_single() ) {  ?>		
 		<!-- Préchargement de la page d\'accueil -->
