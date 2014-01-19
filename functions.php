@@ -76,7 +76,7 @@ function standard_wrap_embeds( $html, $url, $args ) {
 	} // end if 
 	return $html; 
 } // end standard_wrap_embebds
-add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ;
+
 $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' );
 
 // Add Dashicons in the theme
@@ -88,7 +88,34 @@ $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'st
 function wpc_dashicons() {
 	wp_enqueue_style('dashicons');
 }
-add_action('wp_enqueue_scripts', 'wpc_dashicons');
+
+function favicons() {
+?>
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-196x196.png" sizes="196x196">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-16x16.png" sizes="16x16">
+	<meta name="msapplication-TileColor" content="#464646">
+	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/img/mstile-144x144.png">
+	<meta name="msapplication-square70x70logo" content="<?php echo get_template_directory_uri(); ?>/img/mstile-70x70.png">
+	<meta name="msapplication-square144x144logo" content="<?php echo get_template_directory_uri(); ?>/img/mstile-144x144.png">
+	<meta name="msapplication-square150x150logo" content="<?php echo get_template_directory_uri(); ?>/img/mstile-150x150.png">
+	<meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/img/mstile-310x310.png">
+	<meta name="msapplication-wide310x150logo" content="<?php echo get_template_directory_uri(); ?>/img/mstile-310x150.png">
+<?php
+}
+add_action('wp_head', 'favicons');
+
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
@@ -514,6 +541,8 @@ add_action('init', 'create_post_type_html5'); // Add our Foundation Custom Post 
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'foundation_pagination'); // Add our HTML5 Pagination
 add_action('get_header', 'gkp_html_minify_start'); // Minifier le html
+add_action('wp_head', 'gkp_prefetch'); // Optimisation
+add_action('wp_enqueue_scripts', 'wpc_dashicons'); // Utilisation de Dashicon WP 3.8
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -549,14 +578,15 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove 
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 // add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
 add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
-add_theme_support('post-formats', $post_formats); // Ajout de Post Format
 add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
-add_action('wp_head', 'gkp_prefetch'); // Optimisation
+add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ; // Video responsive
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 remove_action('wp_head', 'wp_generator'); // Remove Wordpress version
 
+// Theme support
+add_theme_support('post-formats', $post_formats); // Ajout de Post Format
 
 // Shortcodes
 add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.
