@@ -386,6 +386,54 @@ function add_menu_icons_styles(){
 <?php
 } add_action( 'admin_head', 'add_menu_icons_styles' );
 
+// Foundation navigation
+function foundation_nav()
+{
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'header-menu',
+			'menu'            => '',
+			'container'       => false,
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => '',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul>%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		)
+	);
+}
+// Footer nav
+function footer_nav()
+{
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'footer-menu',
+			'menu'            => '',
+			'container'       => false,
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => '',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul>%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		)
+	);
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes

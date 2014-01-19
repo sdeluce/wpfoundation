@@ -9,12 +9,12 @@
 \*------------------------------------*/
 // http://www.screenfeed.fr/blog/accelerer-wordpress-en-divisant-le-fichier-functions-php-0548/
 
-$divide = false;
+$divide = 'false';
 
 $templatepath = get_template_directory();
 $stylesheetpath = get_stylesheet_directory();
 
-if( $divide == true ){
+if( $divide == 'true' ){
 
 	if ( defined('DOING_AJAX') && DOING_AJAX && is_admin() ) {
 	 

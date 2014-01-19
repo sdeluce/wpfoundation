@@ -575,9 +575,9 @@ add_filter('style_loader_tag', 'foundation_style_remove'); // Remove 'text/css' 
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 // // add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
-// add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
-// add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
-// add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ; // Video responsive
+add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
+add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
+add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ; // Video responsive
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
@@ -664,4 +664,3 @@ function foundation_shortcode_demo_2($atts, $content = null) // Demo Heading H2 
 {
 	return '<h2>' . $content . '</h2>';
 }
-
