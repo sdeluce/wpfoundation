@@ -8,12 +8,11 @@ ___
 * Post Format
 * Custom Post Type
 * Dashicon Wp 3.8
+* Favicon ios, Android, Windows, …
 
 #### Que rajouter ?
 * Support Retina
 * Compass Sprite CSS
-* Favicon ios, Android, Windows, …
-* Optim SEO
 ___
 #### Utiliser Grunt
 ######Mettre en place Grunt
