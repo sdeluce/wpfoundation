@@ -1,19 +1,22 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto
- *  URL: foundation.com | @foundation
+ *  Author: Boluge
  *  Custom functions, support, custom post types and more.
  */
+
+// Optimisation à effectuer
+// http://www.screenfeed.fr/blog/accelerer-wordpress-en-divisant-le-fichier-functions-php-0548/
 
 /*------------------------------------*\
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
-// Login override CSS
+// Login override CSS  --Admin--
 function foundation_login_css()  {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css" />';
 }
+
+// --Front--
 function grid($col) {
 //	Largeur des sidebars
 	$col_left = 3;
@@ -51,14 +54,14 @@ function grid($col) {
 	}
 }
 
-//Deletes empty classes and removes the sub menu class
+//Deletes empty classes and removes the sub menu class --front--
 function change_submenu_class($menu) {
     $menu = preg_replace('/ class="sub-menu"/','/ class="dropdown" /',$menu);
     return $menu;
 }
 
-function gkp_prefetch() {
-	
+// --front-- 
+function gkp_prefetch() {	
     if ( is_single() ) {  ?>		
 		<!-- Préchargement de la page d\'accueil -->
 		<link rel="prefetch" href="<?php echo home_url(); ?>" />
@@ -70,6 +73,8 @@ function gkp_prefetch() {
    <?php
    }
 }
+
+// --front-- 
 function standard_wrap_embeds( $html, $url, $args ) {
 	if( 'video' == get_post_format( get_the_ID() ) ) {
 		$html = '<div class="video-wrapper">' . $html . '</div>';
@@ -77,14 +82,10 @@ function standard_wrap_embeds( $html, $url, $args ) {
 	return $html; 
 } // end standard_wrap_embebds
 
+// --front-- 
 $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' );
 
 // Add Dashicons in the theme
-/*
-	https://github.com/melchoyce/dashicons
-	http://melchoyce.github.io/dashicons/
-	http://jameskoster.co.uk/work/using-wordpress-3-8s-dashicons-theme-plugin/
-*/
 function wpc_dashicons() {
 	wp_enqueue_style('dashicons');
 }
