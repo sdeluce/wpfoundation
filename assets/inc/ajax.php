@@ -1,18 +1,19 @@
-<?php 
+<?php
 /*
  *  Author: Boluge
  *  Custom functions, support, custom post types and more.
  */
 
 /*------------------------------------*\
-	Ajax
+	ajax
 \*------------------------------------*/
-// Login override CSS  --Admin--
+// Personalisation du login Worpdress
 function foundation_login_css()  {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css" />';
 }
 
 /*------------------------------------*\
-	Ajax
+	Actions + Filters + ShortCodes
 \*------------------------------------*/
-?>
+// Add Actions
+add_action('login_head', 'foundation_login_css'); // Add Override Login Css
