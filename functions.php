@@ -4,8 +4,27 @@
  *  Custom functions, support, custom post types and more.
  */
 
-// Optimisation à effectuer
+/*------------------------------------*\
+	Optimisation function
+\*------------------------------------*/
 // http://www.screenfeed.fr/blog/accelerer-wordpress-en-divisant-le-fichier-functions-php-0548/
+
+$templatepath = get_template_directory();
+$stylesheetpath = get_stylesheet_directory();
+ 
+if ( defined('DOING_AJAX') && DOING_AJAX && is_admin() ) {
+ 
+	include( $templatepath.'/inc/ajax.php' );
+ 
+} elseif ( is_admin() ) {
+ 
+	include( $templatepath.'/inc/admin.php' );
+ 
+} elseif ( !defined( 'XMLRPC_REQUEST' ) && !defined( 'DOING_CRON' ) ) {
+ 
+	include( $templatepath.'/inc/frontend.php' );
+ 
+}
 
 /*------------------------------------*\
 	External Modules/Files
@@ -60,7 +79,7 @@ function change_submenu_class($menu) {
     return $menu;
 }
 
-// --front-- 
+// Préchargement des pages 
 function gkp_prefetch() {	
     if ( is_single() ) {  ?>		
 		<!-- Préchargement de la page d\'accueil -->
@@ -74,7 +93,7 @@ function gkp_prefetch() {
    }
 }
 
-// --front-- 
+// Encapsulage des videos
 function standard_wrap_embeds( $html, $url, $args ) {
 	if( 'video' == get_post_format( get_the_ID() ) ) {
 		$html = '<div class="video-wrapper">' . $html . '</div>';
@@ -82,7 +101,7 @@ function standard_wrap_embeds( $html, $url, $args ) {
 	return $html; 
 } // end standard_wrap_embebds
 
-// --front-- 
+// Posts Formats
 $post_formats = array( 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' );
 
 // Add Dashicons in the theme
