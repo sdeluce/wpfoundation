@@ -10,7 +10,7 @@
 
 // Login override CSS  --Front--
 function foundation_login_css()  {
-	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css" />';
+	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/css/login.css?v=1.0.0" />';
 }
 
 // Grilles --Front--
@@ -243,13 +243,13 @@ function foundation_header_scripts()
 		wp_enqueue_script('jquery'); // Enqueue it!
 
 
-		wp_register_script('conditionizr', 'http:////cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0'); // Conditionizr
+		wp_register_script('conditionizr', 'http://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0'); // Conditionizr
 		wp_enqueue_script('conditionizr'); // Enqueue it!
 
 		wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
 		wp_enqueue_script('modernizr'); // Enqueue it!
 
-		wp_register_script('foundationscripts', get_template_directory_uri() . '/js/script.js', array(), '1.0.0'); // Custom scripts
+		wp_register_script('foundationscripts', get_template_directory_uri() . '/js/script.js', array(), filemtime( get_stylesheet_directory() . '/js/script.js')); // Custom scripts
 		wp_enqueue_script('foundationscripts'); // Enqueue it!
 	}
 }
@@ -266,7 +266,7 @@ function foundation_conditional_scripts()
 // Load Foundation styles
 function foundation_styles()
 {
-	wp_register_style('foundation', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+	wp_register_style('foundation', get_template_directory_uri() . '/css/style.css', array(), filemtime( get_stylesheet_directory() . '/css/style.css'), 'all');
 	wp_enqueue_style('foundation'); // Enqueue it!
 }
 
@@ -556,6 +556,7 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+remove_action('wp_head', 'wp_dlmp_l10n_style' );
 
 // Add Filters
 add_filter('avatar_defaults', 'foundationgravatar'); // Custom Gravatar in Settings > Discussion
@@ -589,6 +590,8 @@ add_theme_support('post-formats', $post_formats); // Ajout de Post Format
 // Shortcodes
 add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.
 add_shortcode('foundation_shortcode_demo_2', 'foundation_shortcode_demo_2'); // Place [foundation_shortcode_demo_2] in Pages, Posts now.
+
+automatic_feed_links(false);
 
 // Shortcodes above would be nested like this -
 // [foundation_shortcode_demo] [foundation_shortcode_demo_2] Here's the page title! [/foundation_shortcode_demo_2] [/foundation_shortcode_demo]

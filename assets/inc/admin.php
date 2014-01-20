@@ -110,3 +110,5 @@ add_action( 'admin_head', 'add_menu_icons_styles' );
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
+// add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
+add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3

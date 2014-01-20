@@ -113,14 +113,8 @@ add_filter('excerpt_more', 'foundation_view_article'); // Add 'View Article' but
 
 
 
-// add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
-add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
 
 
-
-// Remove Filters
-remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
-remove_action('wp_head', 'wp_generator'); // Remove Wordpress version
 
 // Theme support
 
