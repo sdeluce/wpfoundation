@@ -526,77 +526,6 @@ function foundationcomments($comment, $args, $depth)
 <?php }
 
 /*------------------------------------*\
-	Actions + Filters + ShortCodes
-\*------------------------------------*/
-// Add Actions
-add_action('login_head', 'foundation_login_css'); // Add Override Login Css
-add_action('init', 'foundation_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'foundation_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'foundation_styles'); // Add Theme Stylesheet
-add_action('init', 'register_foundation_menu'); // Add Foundation Menu
-add_action('init', 'create_post_type_html5'); // Add our Foundation Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
-add_action('init', 'foundation_pagination'); // Add our HTML5 Pagination
-add_action('get_header', 'gkp_html_minify_start'); // Minifier le html
-add_action('wp_head', 'gkp_prefetch'); // Optimisation
-add_action('wp_enqueue_scripts', 'wpc_dashicons'); // Utilisation de Dashicon WP 3.8
-
-// Remove Actions
-remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
-remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
-remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
-remove_action('wp_head', 'index_rel_link'); // Index link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
-remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action('wp_head', 'start_post_rel_link', 10, 0);
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-remove_action('wp_head', 'rel_canonical');
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
-remove_action('wp_head', 'wp_dlmp_l10n_style' );
-
-// Add Filters
-add_filter('avatar_defaults', 'foundationgravatar'); // Custom Gravatar in Settings > Discussion
-add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
-add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
-add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
-add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
-// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
-// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
-// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
-add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
-add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
-add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-add_filter('excerpt_more', 'foundation_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
-add_filter('style_loader_tag', 'foundation_style_remove'); // Remove 'text/css' from enqueued stylesheet
-add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
-add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
-// // add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
-add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
-add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
-add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ; // Video responsive
-
-// Remove Filters
-remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
-remove_action('wp_head', 'wp_generator'); // Remove Wordpress version
-
-// Theme support
-add_theme_support('post-formats', $post_formats); // Ajout de Post Format
-
-// Shortcodes
-add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.
-add_shortcode('foundation_shortcode_demo_2', 'foundation_shortcode_demo_2'); // Place [foundation_shortcode_demo_2] in Pages, Posts now.
-
-automatic_feed_links(false);
-
-// Shortcodes above would be nested like this -
-// [foundation_shortcode_demo] [foundation_shortcode_demo_2] Here's the page title! [/foundation_shortcode_demo_2] [/foundation_shortcode_demo]
-
-/*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
 function add_menu_icons_styles(){
@@ -667,3 +596,74 @@ function foundation_shortcode_demo_2($atts, $content = null) // Demo Heading H2 
 {
 	return '<h2>' . $content . '</h2>';
 }
+
+/*------------------------------------*\
+	Actions + Filters + ShortCodes
+\*------------------------------------*/
+// Add Actions
+add_action('login_head', 'foundation_login_css'); // Add Override Login Css
+add_action('init', 'foundation_header_scripts'); // Add Custom Scripts to wp_head
+add_action('wp_print_scripts', 'foundation_conditional_scripts'); // Add Conditional Page Scripts
+add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+add_action('wp_enqueue_scripts', 'foundation_styles'); // Add Theme Stylesheet
+add_action('init', 'register_foundation_menu'); // Add Foundation Menu
+add_action('init', 'create_post_type_html5'); // Add our Foundation Custom Post Type
+add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
+add_action('init', 'foundation_pagination'); // Add our HTML5 Pagination
+add_action('get_header', 'gkp_html_minify_start'); // Minifier le html
+add_action('wp_head', 'gkp_prefetch'); // Optimisation
+add_action('wp_enqueue_scripts', 'wpc_dashicons'); // Utilisation de Dashicon WP 3.8
+
+// Remove Actions
+remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
+remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
+remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
+remove_action('wp_head', 'index_rel_link'); // Index link
+remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
+remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
+remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+remove_action('wp_head', 'rel_canonical');
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+remove_action('wp_head', 'wp_dlmp_l10n_style' );
+
+// Add Filters
+add_filter('avatar_defaults', 'foundationgravatar'); // Custom Gravatar in Settings > Discussion
+add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
+add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
+add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
+add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
+// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
+// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
+// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
+add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
+add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
+add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
+add_filter('excerpt_more', 'foundation_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+add_filter('style_loader_tag', 'foundation_style_remove'); // Remove 'text/css' from enqueued stylesheet
+add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
+add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+// // add_filter('jpeg_quality', function($arg){return 80;}); // Compression des images à 80% au lieu de 90%
+add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) ); // Idem php < 5.3
+add_filter ('wp_nav_menu','change_submenu_class'); // Add class menu
+add_filter( 'embed_oembed_html', 'standard_wrap_embeds', 10, 3 ) ; // Video responsive
+
+// Remove Filters
+remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
+remove_action('wp_head', 'wp_generator'); // Remove Wordpress version
+
+// Theme support
+add_theme_support('post-formats', $post_formats); // Ajout de Post Format
+
+// Shortcodes
+add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.
+add_shortcode('foundation_shortcode_demo_2', 'foundation_shortcode_demo_2'); // Place [foundation_shortcode_demo_2] in Pages, Posts now.
+
+automatic_feed_links(false);
+
+// Shortcodes above would be nested like this -
+// [foundation_shortcode_demo] [foundation_shortcode_demo_2] Here's the page title! [/foundation_shortcode_demo_2] [/foundation_shortcode_demo]
