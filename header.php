@@ -29,7 +29,7 @@
 	</head>
 	<body <?php body_class('antialiased'); ?>>
 		<div class="row">
-			<header id="bdimage" <?php if ( get_header_image() ) : ?>data-image="<?php header_image(); ?>"<?php endif; ?>>
+			<header id="bdimage" >
 				<?php if ( !get_header_image() ) : ?>
 					<?php if (is_single() || is_page()): ?>
 						<p class="h1"><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></p>
@@ -46,5 +46,4 @@
 				<?php foundation_nav( $menu ); ?>
 			</nav>
 		</div>
-		<p class="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, perspiciatis, iure quis quam illum accusamus aliquam facilis officia culpa tenetur porro incidunt maiores ipsa! Dolorum magni et suscipit reiciendis consequuntur!</p>
 		<div class="row">
