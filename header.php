@@ -31,10 +31,10 @@
 			<header id="bdimage" >
 				<?php if ( !get_header_image() ) : ?>
 					<?php if (is_single() || is_page()): ?>
-						<p class="h1"><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></p>
+						<p class="h1"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></p>
 						<p><?php bloginfo('description'); ?></p>
 					<?php else : ?>
-						<h1><a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a></h1>
+						<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 						<p><?php bloginfo('description'); ?></p>
 					<?php endif; ?>
 				<?php else: ?>
@@ -42,7 +42,7 @@
 				<?php endif; ?>
 			</header>
 			<nav class="top-bar" data-topbar>
-				<?php foundation_nav( $menu ); ?>
+				<?php header_nav(); ?>
 			</nav>
 		</div>
 		<div class="row">

@@ -185,7 +185,7 @@ function gkp_html_minyfy_finish( $html )  {
 \*------------------------------------*/
 
 // Foundation navigation
-function foundation_nav()
+function header_nav()
 {
 	wp_nav_menu(
 		array(
@@ -662,8 +662,6 @@ add_theme_support('post-formats', $post_formats); // Ajout de Post Format
 // Shortcodes
 add_shortcode('foundation_shortcode_demo', 'foundation_shortcode_demo'); // You can place [foundation_shortcode_demo] in Pages, Posts now.
 add_shortcode('foundation_shortcode_demo_2', 'foundation_shortcode_demo_2'); // Place [foundation_shortcode_demo_2] in Pages, Posts now.
-
-automatic_feed_links(false);
 
 // Shortcodes above would be nested like this -
 // [foundation_shortcode_demo] [foundation_shortcode_demo_2] Here's the page title! [/foundation_shortcode_demo_2] [/foundation_shortcode_demo]
