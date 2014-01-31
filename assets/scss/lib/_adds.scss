@@ -12,6 +12,9 @@
 *, *:before, *:after {
 	@include box-sizing(border-box);
 }
+.center {
+	text-align: center;
+}
 
 @media screen and (max-width: $row-width) {
 	body {
