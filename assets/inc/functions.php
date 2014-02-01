@@ -236,14 +236,14 @@ function footer_nav()
 // Load Foundation scripts (header.php)
 function foundation_header_scripts()
 {
-	if (!is_admin()) {
+	if (!is_admin()) add_action("wp_enqueue_scripts", "my_scripts_enqueue", 11);
+	
+	function my_scripts_enqueue() {
+	    wp_deregister_script('jquery');
+	    wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2'); // Google CDN jQuery
+	    wp_enqueue_script('jquery');
 
-		wp_deregister_script('jquery'); // Deregister WordPress jQuery
-		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2'); // Google CDN jQuery
-		wp_enqueue_script('jquery'); // Enqueue it!
-
-
-		wp_register_script('conditionizr', 'http://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0'); // Conditionizr
+	    wp_register_script('conditionizr', 'http://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0'); // Conditionizr
 		wp_enqueue_script('conditionizr'); // Enqueue it!
 
 		wp_register_script('modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
