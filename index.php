@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_sidebar('left'); ?>	
+<?php get_sidebar('left'); ?>
 	<!-- section -->
 	<section class="large-<?php grid('main'); ?> columns" role="main">
 	

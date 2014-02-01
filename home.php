@@ -1,7 +1,12 @@
 <?php get_header(); ?>
-	
+<!-- Message -->
+<div style="background:#e74c3c;text-align:center; color: #fff; padding:3px; margin-bottom:15px;">
+	<small>To change edit home.php</small>
+</div>
+
+<?php get_sidebar('left'); ?>
 	<!-- section -->
-	<section role="main">
+	<section class="large-<?php grid('main'); ?> columns" role="main">
 	
 		<h1><?php the_title(); ?></h1>
 		<h2>To change edit home.php</h2>
@@ -38,6 +43,6 @@
 	</section>
 	<!-- /section -->
 	
-<?php get_sidebar(); ?>
+<?php get_sidebar('right'); ?>
 
 <?php get_footer(); ?>

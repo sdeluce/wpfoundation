@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 	
+<?php get_sidebar('left'); ?>
 	<!-- section -->
-	<section role="main">
+	<section class="large-<?php grid('main'); ?> columns" role="main">
 	
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
@@ -58,8 +59,7 @@
 	<?php endif; ?>
 	
 	</section>
-	<!-- /section -->
-	
-<?php get_sidebar(); ?>
+	<!-- /section -->	
+<?php get_sidebar('right'); ?>
 
 <?php get_footer(); ?>

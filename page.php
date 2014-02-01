@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 	
+<?php get_sidebar('left'); ?>
 	<!-- section -->
-	<section role="main">
+	<section class="large-<?php grid('main'); ?> columns" role="main">
 	
 		<h1><?php the_title(); ?></h1>
 	
@@ -38,6 +39,6 @@
 	</section>
 	<!-- /section -->
 	
-<?php get_sidebar(); ?>
+<?php get_sidebar('right'); ?>
 
 <?php get_footer(); ?>
