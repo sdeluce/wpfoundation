@@ -21,11 +21,11 @@
 		<![endif]-->
 		
 		<script>
-		// conditionizr.com
-		conditionizr.config({
-			assets: '<?php echo get_template_directory_uri(); ?>',
-			tests: {}
-		});
+			// conditionizr.com
+			// conditionizr.config({
+			// 	assets: '<?php echo get_template_directory_uri(); ?>',
+			// 	tests: {}
+			// });
 		</script>
 
 	</head>
